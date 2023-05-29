@@ -18,9 +18,9 @@ public class MainTrain {
 		PrintWriter out;
 		Scanner in;		
 		@Override
-		public void handleClient(InputStream inFromclient, OutputStream outToClient) {
+		public void handleClient(InputStream inFromClient, OutputStream outToClient) {
 			out=new PrintWriter(outToClient);
-			in=new Scanner(inFromclient);
+			in=new Scanner(inFromClient);
 			String text = in.next();
 			out.println(new StringBuilder(text).reverse());
 			out.flush();
@@ -48,8 +48,6 @@ public class MainTrain {
 				outToServer.println(text);
 				outToServer.flush();
 				String response=in.next();
-				//System.out.println(text);
-				//System.out.println(rev);
 				if(response==null || !response.equals(rev)) 
 					System.out.println("problem getting the right response from your server, cannot continue the test (-25)");
 				in.close();
