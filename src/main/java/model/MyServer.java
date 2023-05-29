@@ -1,5 +1,7 @@
 package model;
 
+import word_search.ClientHandler;
+
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.ServerSocket;
@@ -52,7 +54,7 @@ public class MyServer {
 					//ch.handleClient(client.getInputStream(), client.getOutputStream());
 					//ch.close();
 					//client.close();
-				} catch(SocketTimeoutException e) {}
+				} catch(SocketTimeoutException ignored) {}
 			}
 			server.close();
 			tp.shutdown();

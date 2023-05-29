@@ -1,6 +1,7 @@
 package model;
 
 
+import word_search.ClientHandler;
 import word_search.DictionaryManager;
 
 import java.io.InputStream;
@@ -26,9 +27,8 @@ public class BookScrabbleHandler implements ClientHandler {
         String[] search = in.next().split(",");
         String type = search[0];
         String[] searchArgs = new String[search.length - 1];
-        
-        for(int i=1; i<search.length; i++)
-            searchArgs[i-1] = search[i];
+
+        System.arraycopy(search, 1, searchArgs, 0, search.length - 1);
 
         if (type.equals("C"))
             res = dm.challenge(searchArgs);
