@@ -24,7 +24,7 @@ public class Model extends Observable{
             BufferedReader in = new BufferedReader(new FileReader(propertiesFileName));
             String line;
             while((line=in.readLine())!=null) {
-                String sp[] = line.split(",");
+                String[] sp = line.split(",");
                 properties.put(sp[0], sp[1]);
             }
             in.close();
@@ -74,6 +74,7 @@ public class Model extends Observable{
         out2fg.flush();
     }
 
+    @SuppressWarnings("removal")
     @Override
     public void finalize() {
         try {

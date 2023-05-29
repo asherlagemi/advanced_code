@@ -1,4 +1,4 @@
-package model;////package search;
+package word_search;////package search;
 //package test;
 //
 //public interface FileSearcher {

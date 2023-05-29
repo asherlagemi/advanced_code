@@ -1,4 +1,4 @@
-package model;
+package game_element;
 
 import java.util.Arrays;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package model;
+package word_search;
 
 import java.io.File;
 import java.util.ArrayList;

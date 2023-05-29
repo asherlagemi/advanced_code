@@ -1,6 +1,8 @@
 package model;
 
 
+import word_search.DictionaryManager;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;

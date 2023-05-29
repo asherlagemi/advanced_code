@@ -1,4 +1,4 @@
-package model;
+package word_search;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

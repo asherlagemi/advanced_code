@@ -1,4 +1,4 @@
-package model;//package test;
+package word_search;//package test;
 //
 //import java.util.ArrayList;
 //import java.util.concurrent.ExecutionException;

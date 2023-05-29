@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36655a73-77ff-4503-bc8c-09819e4bc37e" name="Changes" comment="re-upload" />
+    <list default="true" id="36655a73-77ff-4503-bc8c-09819e4bc37e" name="Changes" comment="divided files to packages">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/BloomFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/word_search/BloomFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game_element/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/BookScrabbleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BookScrabbleHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CacheManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/word_search/CacheManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CacheReplacementPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/word_search/CacheReplacementPolicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/word_search/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DictionaryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/word_search/DictionaryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/FileSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/word_search/FileSearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/IOSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/word_search/IOSearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/LFU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/word_search/LFU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/LRU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/word_search/LRU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/MainTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MainTrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ParIOSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/word_search/ParIOSearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game_element/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game_element/Word.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +41,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/asher/OneDrive/Desktop/advanced_code",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -30,6 +49,11 @@
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\asher\OneDrive\Desktop\advanced_code\src\main\java\word_search" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="changes">
@@ -53,7 +77,14 @@
       <option name="presentableId" value="Default" />
       <updated>1685378557177</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="re-upload">
+      <created>1685378781342</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685378781342</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -62,6 +93,7 @@
     </ignored-roots>
     <MESSAGE value="changes" />
     <MESSAGE value="re-upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="re-upload" />
+    <MESSAGE value="divided files to packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="divided files to packages" />
   </component>
 </project>

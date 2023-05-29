@@ -1,4 +1,4 @@
-package model;
+package word_search;
 
 import java.util.LinkedList;
 import java.util.List;
