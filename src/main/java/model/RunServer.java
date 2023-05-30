@@ -8,6 +8,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.Random;
 import java.util.Scanner;
 
 public class RunServer {
@@ -38,6 +40,28 @@ public class RunServer {
     }
 
     public static void main(String[] args) {
+//        Random r=new Random();
+//        int port=6000+r.nextInt(1000);
+//        System.out.println("port: " + port);
+//        MyServer s=new MyServer(port, new BookScrabbleHandler(),3);
+//        s.start(); // runs in the background
+//        try {
+//            Socket server=new Socket("localhost", port);
+//            PrintWriter outToServer=new PrintWriter(server.getOutputStream());
+//            Scanner in=new Scanner(server.getInputStream());
+//            String response=in.next();
+//            outToServer.println(w);
+//            outToServer.flush();
+//            in.close();
+//            outToServer.close();
+//            server.close();
+//        }catch(Exception e) {
+//            System.out.println("error in checking dictionaryLegal in Board");
+//        }finally{
+//            s.close();
+//        }
+
+//
         System.out.println("SERVER SIDE");
         MyServer server = new MyServer(8080, new TestClientHandler(), 3);
         //MyServer server = new MyServer(8080, new HTTPClientHandler());

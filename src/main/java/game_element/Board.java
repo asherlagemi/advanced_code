@@ -1,15 +1,18 @@
 package game_element;
 
+import model.BookScrabbleHandler;
+import model.MyServer;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Board {
-
-	
 	// indexes
 	final byte dl=2;	// double letter
 	final byte tl=3;	// triple letter
@@ -127,46 +130,28 @@ public class Board {
 	//CHANGE THIS METHOD TO USE BOOK SCRABBLE HANDLER
 	public boolean dictionaryLegal(Word w) {
 		boolean ok=true;
-		try{
-			System.out.println("CLIENT SIDE");
-			Socket client = new Socket("localhost",8080);
-			PrintWriter outToServer = new PrintWriter(client.getOutputStream(), true);
-			BufferedReader inFromServer = new BufferedReader(new InputStreamReader(client.getInputStream()));
-			outToServer.println("hello world!");
-			System.out.println(inFromServer.readLine());
-			outToServer.println("I love this course!");
-			System.out.println(inFromServer.readLine());
-			outToServer.println("bye");
-			inFromServer.close();
+		Random r=new Random();
+		//int port=6000+r.nextInt(1000);
+		int port = new Scanner(System.in).nextInt();
+		MyServer s=new MyServer(port, new BookScrabbleHandler(),3);
+		s.start(); // runs in the background
+		try {
+			Socket server=new Socket("localhost", port);
+			PrintWriter outToServer=new PrintWriter(server.getOutputStream());
+			Scanner in=new Scanner(server.getInputStream());
+			outToServer.println(w);
+			outToServer.flush();
+			String response=in.next();
+			in.close();
 			outToServer.close();
-			client.close();
-		}
-		catch(IOException e){
-			ok = false;
+			server.close();
+		}catch(Exception e) {
+			System.out.println("error in checking dictionaryLegal in Board");
+			ok=false;
+		}finally{
+			s.close();
 		}
 
-//		boolean ok=true;
-//		Random r=new Random();
-//		int port=6000+r.nextInt(1000);
-//		MyServer s=new MyServer(port, new BookScrabbleHandler(),3);
-//		s.start(); // runs in the background
-//		try {
-//			Socket server=new Socket("localhost", port);
-//			PrintWriter outToServer=new PrintWriter(server.getOutputStream());
-//			Scanner in=new Scanner(server.getInputStream());
-//			outToServer.println(w);
-//			outToServer.flush();
-//			String response=in.next();
-//			in.close();
-//			outToServer.close();
-//			server.close();
-//		}catch(Exception e) {
-//			System.out.println("error in checking dictionaryLegal in Board");
-//			ok=false;
-//		}finally{
-//			s.close();
-//		}
-//
 		return ok;
 	}
 	

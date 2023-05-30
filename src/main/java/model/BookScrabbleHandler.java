@@ -20,9 +20,9 @@ public class BookScrabbleHandler implements ClientHandler {
     }
 
     @Override
-    public void handleClient(InputStream inFromclient, OutputStream outToClient) {
+    public void handleClient(InputStream inFromClient, OutputStream outToClient) {
         out = new PrintWriter(outToClient);
-        in = new Scanner(inFromclient);
+        in = new Scanner(inFromClient);
         boolean res;
         String[] search = in.next().split(",");
         String type = search[0];
