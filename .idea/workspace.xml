@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36655a73-77ff-4503-bc8c-09819e4bc37e" name="Changes" comment="added methods to GameLogic and created GameLogicTest">
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/PlayerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/PlayerStatus.java" afterDir="false" />
+    <list default="true" id="36655a73-77ff-4503-bc8c-09819e4bc37e" name="Changes" comment="updated files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameLogicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/GameLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/GameLogic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/GameLogicTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/GameLogicTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/PlayerStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/PlayerStatus.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +176,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685470707195</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added method distributeTiles to GameLogic and created PlayerStatus">
+      <created>1685474036951</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685474036951</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added method distributeTiles to GameLogic and created PlayerStatus">
+      <created>1685474077618</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685474077619</updated>
+    </task>
+    <task id="LOCAL-00010" summary="updated files">
+      <created>1685474098595</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685474098595</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -184,6 +210,8 @@
     <MESSAGE value="added RunServer and RunClient" />
     <MESSAGE value="added host and guest classes" />
     <MESSAGE value="added methods to GameLogic and created GameLogicTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="added methods to GameLogic and created GameLogicTest" />
+    <MESSAGE value="added method distributeTiles to GameLogic and created PlayerStatus" />
+    <MESSAGE value="updated files" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated files" />
   </component>
 </project>

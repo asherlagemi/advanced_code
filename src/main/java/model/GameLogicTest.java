@@ -21,7 +21,23 @@ public class GameLogicTest {
         System.out.println("length: " + newTiles.length);
     }
 
+    public static void testStats(){
+        PlayerStatus p1 = new PlayerStatus("Asher");
+        System.out.println(p1.getName());
+        GameLogic.updateStatistic(p1,true,6); // should be 6+10=16
+        System.out.printf("%d\t", p1.getScore());
+        GameLogic.updateStatistic(p1,false,0); // should be 16
+        System.out.printf("%d\t", p1.getScore());
+        GameLogic.updateStatistic(p1,false,5); // should be 16+5=21
+        System.out.printf("%d\t", p1.getScore());
+        GameLogic.updateStatistic(p1,true,3); // should be 24+10=34
+        System.out.printf("%d\t", p1.getScore());
+        GameLogic.updateStatistic(p1,true,0); // should be 34-5=29
+        System.out.printf("%d\t", p1.getScore());
+    }
+
     public static void main(String[] args){
         testDist();
+        testStats();
     }
 }
