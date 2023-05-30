@@ -4,34 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36655a73-77ff-4503-bc8c-09819e4bc37e" name="Changes" comment="added RunServer and RunClient">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/RunClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/RunServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game_element/Board.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game_element/Tile$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game_element/Tile$Bag.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game_element/Tile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/game_element/Word.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/word_search/BloomFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/word_search/CacheManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/word_search/CacheReplacementPolicy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/word_search/Dictionary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/word_search/DictionaryManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/word_search/FileSearcher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/word_search/IOSearcher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/word_search/LFU.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/word_search/LRU.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/word_search/ParIOSearcher.class" afterDir="false" />
+    <list default="true" id="36655a73-77ff-4503-bc8c-09819e4bc37e" name="Changes" comment="added host and guest classes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/GameLogicTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/BookScrabbleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BookScrabbleHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/word_search/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/MainTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MainTrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/MyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/BookScrabbleHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/BookScrabbleHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/MainTrain$ClientHandler1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/MainTrain$ClientHandler1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/MainTrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/MainTrain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/MyServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/MyServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GuestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GuestModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +53,33 @@
       <recent name="C:\Users\asher\OneDrive\Desktop\advanced_code\src\main\java\word_search" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunClient">
+  <component name="RunManager" selected="Application.GameLogicTest">
+    <configuration name="GameLogic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.GameLogic" />
+      <module name="advanced_code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameLogicTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.GameLogicTest" />
+      <module name="advanced_code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RunClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="model.RunClient" />
       <module name="advanced_code" />
@@ -106,6 +108,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GameLogicTest" />
+        <item itemvalue="Application.GameLogic" />
         <item itemvalue="Application.RunClient" />
         <item itemvalue="Application.RunServer" />
       </list>
@@ -148,7 +152,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685383208362</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added RunServer and RunClient">
+      <created>1685384889485</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685384889485</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added host and guest classes">
+      <created>1685385532114</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685385532114</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -159,6 +177,7 @@
     <MESSAGE value="re-upload" />
     <MESSAGE value="divided files to packages" />
     <MESSAGE value="added RunServer and RunClient" />
-    <option name="LAST_COMMIT_MESSAGE" value="added RunServer and RunClient" />
+    <MESSAGE value="added host and guest classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added host and guest classes" />
   </component>
 </project>
