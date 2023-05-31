@@ -17,7 +17,7 @@ public class GameLogic {
         return newHand;
     }
 
-    public static void updateStatistic(PlayerStatus player, boolean riskFlag, int score) {
+    public static void updateStatistic(PlayerStatistics player, boolean riskFlag, int score) {
         if (riskFlag) {
             if (score!=0)
                 score += 10;    // prize if took successful risk

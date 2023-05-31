@@ -9,7 +9,6 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Observable;
-import java.util.Random;
 
 @SuppressWarnings("deprecation")
 public class Model extends Observable{

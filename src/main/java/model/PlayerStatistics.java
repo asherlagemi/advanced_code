@@ -1,10 +1,10 @@
 package model;
 
-public class PlayerStatus {
+public class PlayerStatistics {
     private final String name;
     private int score;
 
-    public PlayerStatus(String name) {
+    public PlayerStatistics(String name) {
         this.name = name;
         this.score = 0;
     }

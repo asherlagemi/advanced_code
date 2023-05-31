@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36655a73-77ff-4503-bc8c-09819e4bc37e" name="Changes" comment="added test for updateStatistics in GameLogicTest">
-      <change afterPath="$PROJECT_DIR$/src/test/java/game_element/BoardTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/GameLogicTest.java" afterDir="false" />
+    <list default="true" id="36655a73-77ff-4503-bc8c-09819e4bc37e" name="Changes" comment="updated files">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game_element/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game_element/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game_element/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game_element/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/BookScrabbleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BookScrabbleHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameLogicTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GuestModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/HostModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/PlayerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/PlayerStatistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/RunClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/RunClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/RunServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/RunServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game_element/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game_element/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game_element/Tile$Bag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game_element/Tile$Bag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/GameLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/GameLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/GameLogicTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/RunServer$TestClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/RunServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/WindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/GameLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/GameLogicTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +26,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -45,20 +41,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/asher/OneDrive/Desktop/advanced_code",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/asher/OneDrive/Desktop/advanced_code&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="model" />
@@ -66,28 +60,8 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\asher\OneDrive\Desktop\advanced_code\src\main\java\word_search" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="model" />
-      <recent name="game_element" />
-    </key>
   </component>
-  <component name="RunManager">
-    <configuration name="BoardTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game_element.BoardTest" />
-      <module name="advanced_code" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="game_element.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.GameLogicTest">
     <configuration name="GameLogic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="model.GameLogic" />
       <module name="advanced_code" />
@@ -142,7 +116,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BoardTest" />
         <item itemvalue="Application.GameLogicTest" />
         <item itemvalue="Application.GameLogic" />
         <item itemvalue="Application.RunClient" />
@@ -229,14 +202,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685474098595</updated>
     </task>
-    <task id="LOCAL-00011" summary="added test for updateStatistics in GameLogicTest">
-      <created>1685475661498</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1685475661498</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -251,7 +217,10 @@
     <MESSAGE value="added methods to GameLogic and created GameLogicTest" />
     <MESSAGE value="added method distributeTiles to GameLogic and created PlayerStatus" />
     <MESSAGE value="updated files" />
-    <MESSAGE value="added test for updateStatistics in GameLogicTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test for updateStatistics in GameLogicTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated files" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
