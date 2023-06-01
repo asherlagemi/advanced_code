@@ -1,0 +1,270 @@
+Index: src/main/java/model/Model.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package model;\r\n\r\nimport java.io.BufferedReader;\r\nimport java.io.FileNotFoundException;\r\nimport java.io.FileReader;\r\nimport java.io.IOException;\r\nimport java.io.PrintWriter;\r\nimport java.net.Socket;\r\nimport java.net.UnknownHostException;\r\nimport java.util.HashMap;\r\nimport java.util.Observable;\r\nimport java.util.Random;\r\n\r\n@SuppressWarnings(\"deprecation\")\r\npublic class Model extends Observable{\r\n\r\n    HashMap<String,String> properties;\t//map between the property and its value\r\n    Socket fg;\t//creating a socket that connects to the outside simulator\r\n    PrintWriter out2fg;\r\n\r\n    public Model(String propertiesFileName) {\r\n        properties = new HashMap<>();\r\n        try {\r\n            BufferedReader in = new BufferedReader(new FileReader(propertiesFileName));\r\n            String line;\r\n            while((line=in.readLine())!=null) {\r\n                String[] sp = line.split(\",\");\r\n                properties.put(sp[0], sp[1]);\r\n            }\r\n            in.close();\r\n        } catch (FileNotFoundException e) {\r\n            e.printStackTrace();\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        int port = Integer.parseInt(properties.get(\"port\"));\r\n        try {\r\n            fg = new Socket(properties.get(\"ip\"),port);\r\n            out2fg = new PrintWriter(fg.getOutputStream());\r\n        } catch (UnknownHostException e) {\r\n            e.printStackTrace();\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n//\taileron,set /controls/flight/aileron\r\n//\televators,set /controls/flight/elevator\r\n//\trudder,set /controls/flight/rudder\r\n//\tthrottle,set /controls/engines/current-engine/throttle\r\n\r\n    public void setAileron(double x) {\r\n        String command = properties.get(\"aileron\");\r\n        out2fg.println(command+\" \"+x);\r\n        out2fg.flush();\r\n    }\r\n\r\n    public void setElevators(double x) {\r\n        String command = properties.get(\"elevators\");\r\n        out2fg.println(command+\" \"+x);\r\n        out2fg.flush();\r\n    }\r\n\r\n    public void setRudder(double x) {\r\n        String command = properties.get(\"rudder\");\r\n        out2fg.println(command+\" \"+x);\r\n        out2fg.flush();\r\n    }\r\n\r\n    public void setThrottle(double x) {\r\n        String command = properties.get(\"throttle\");\r\n        out2fg.println(command+\" \"+x);\r\n        out2fg.flush();\r\n    }\r\n\r\n    @SuppressWarnings(\"removal\")\r\n    @Override\r\n    public void finalize() {\r\n        try {\r\n            out2fg.close();\r\n            fg.close();\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/model/Model.java b/src/main/java/model/Model.java
+--- a/src/main/java/model/Model.java	(revision cdac14866ba84dcc4d9c4007dc61c4fdde8fec5d)
++++ b/src/main/java/model/Model.java	(date 1685485887765)
+@@ -9,7 +9,6 @@
+ import java.net.UnknownHostException;
+ import java.util.HashMap;
+ import java.util.Observable;
+-import java.util.Random;
+ 
+ @SuppressWarnings("deprecation")
+ public class Model extends Observable{
+Index: src/main/java/view/WindowController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package view;\r\n\r\npublic class WindowController {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/WindowController.java b/src/main/java/view/WindowController.java
+--- a/src/main/java/view/WindowController.java	(revision cdac14866ba84dcc4d9c4007dc61c4fdde8fec5d)
++++ b/src/main/java/view/WindowController.java	(date 1685485915973)
+@@ -1,5 +1,7 @@
+ package view;
+ 
++import java.util.Observable;
++
+ public class WindowController {
+ 
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"36655a73-77ff-4503-bc8c-09819e4bc37e\" name=\"Changes\" comment=\"updated files\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/model/GameLogic.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/model/GameLogic.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/model/GameLogicTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/model/GameLogicTest.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/model/GameLogic.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/model/GameLogic.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/model/GameLogicTest.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/model/GameLogicTest.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/model/PlayerStatus.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/model/PlayerStatus.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2QTXToMnho9kMSPbEnn6VuAtpkX\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"last_opened_file_path\": \"C:/Users/asher/OneDrive/Desktop/advanced_code\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"settings.editor.selected.configurable\": \"project.propVCSSupport.DirectoryMappings\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"model\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\asher\\OneDrive\\Desktop\\advanced_code\\src\\main\\java\\word_search\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.GameLogicTest\">\r\n    <configuration name=\"GameLogic\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"model.GameLogic\" />\r\n      <module name=\"advanced_code\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"model.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"GameLogicTest\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"model.GameLogicTest\" />\r\n      <module name=\"advanced_code\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"model.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"RunClient\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"model.RunClient\" />\r\n      <module name=\"advanced_code\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"model.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"RunServer\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"model.RunServer\" />\r\n      <module name=\"advanced_code\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"model.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.GameLogicTest\" />\r\n        <item itemvalue=\"Application.GameLogic\" />\r\n        <item itemvalue=\"Application.RunClient\" />\r\n        <item itemvalue=\"Application.RunServer\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task id=\"LOCAL-00001\" summary=\"changes\">\r\n      <created>1685377612313</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685377612313</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"re-upload\">\r\n      <created>1685377635612</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685377635612</updated>\r\n    </task>\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"36655a73-77ff-4503-bc8c-09819e4bc37e\" name=\"Changes\" comment=\"re-upload\" />\r\n      <created>1685378557177</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1685378557177</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"re-upload\">\r\n      <created>1685378781342</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685378781342</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"divided files to packages\">\r\n      <created>1685383208362</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685383208362</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"added RunServer and RunClient\">\r\n      <created>1685384889485</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685384889485</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"added host and guest classes\">\r\n      <created>1685385532114</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685385532114</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"added methods to GameLogic and created GameLogicTest\">\r\n      <created>1685470707195</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685470707195</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"added method distributeTiles to GameLogic and created PlayerStatus\">\r\n      <created>1685474036951</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685474036951</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"added method distributeTiles to GameLogic and created PlayerStatus\">\r\n      <created>1685474077618</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685474077619</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"updated files\">\r\n      <created>1685474098595</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685474098595</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"11\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <ignored-roots>\r\n      <path value=\"$PROJECT_DIR$\" />\r\n    </ignored-roots>\r\n    <MESSAGE value=\"changes\" />\r\n    <MESSAGE value=\"re-upload\" />\r\n    <MESSAGE value=\"divided files to packages\" />\r\n    <MESSAGE value=\"added RunServer and RunClient\" />\r\n    <MESSAGE value=\"added host and guest classes\" />\r\n    <MESSAGE value=\"added methods to GameLogic and created GameLogicTest\" />\r\n    <MESSAGE value=\"added method distributeTiles to GameLogic and created PlayerStatus\" />\r\n    <MESSAGE value=\"updated files\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"updated files\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision cdac14866ba84dcc4d9c4007dc61c4fdde8fec5d)
++++ b/.idea/workspace.xml	(date 1685543394421)
+@@ -4,31 +4,19 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="36655a73-77ff-4503-bc8c-09819e4bc37e" name="Changes" comment="updated files">
++    <list default="true" id="36655a73-77ff-4503-bc8c-09819e4bc37e" name="Changes" comment="re-upload">
++      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameLogic.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameLogicTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/model/GameLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/GameLogic.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/model/GameLogicTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/GameLogicTest.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/model/PlayerStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/PlayerStatus.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Model.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/view/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/WindowController.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="Class" />
+-      </list>
+-    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="MarkdownSettingsMigration">
+-    <option name="stateVersion" value="1" />
+   </component>
+   <component name="ProjectId" id="2QTXToMnho9kMSPbEnn6VuAtpkX" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+@@ -41,83 +29,13 @@
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "git-widget-placeholder": "master",
+-    "last_opened_file_path": "C:/Users/asher/OneDrive/Desktop/advanced_code",
++    "last_opened_file_path": "C:/Users/ASUS/Desktop/semester_8_eng_Bsc/Advenced_programing/tirgul_codes_Advanced_Programming/week5_MVVM_example",
+     "project.structure.last.edited": "Modules",
+     "project.structure.proportion": "0.0",
+     "project.structure.side.proportion": "0.0",
+     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+   }
+ }]]></component>
+-  <component name="RecentsManager">
+-    <key name="CreateClassDialog.RecentsKey">
+-      <recent name="model" />
+-    </key>
+-    <key name="MoveFile.RECENT_KEYS">
+-      <recent name="C:\Users\asher\OneDrive\Desktop\advanced_code\src\main\java\word_search" />
+-    </key>
+-  </component>
+-  <component name="RunManager" selected="Application.GameLogicTest">
+-    <configuration name="GameLogic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="model.GameLogic" />
+-      <module name="advanced_code" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="model.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="GameLogicTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="model.GameLogicTest" />
+-      <module name="advanced_code" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="model.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="RunClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="model.RunClient" />
+-      <module name="advanced_code" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="model.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="RunServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="model.RunServer" />
+-      <module name="advanced_code" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="model.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Application.GameLogicTest" />
+-        <item itemvalue="Application.GameLogic" />
+-        <item itemvalue="Application.RunClient" />
+-        <item itemvalue="Application.RunServer" />
+-      </list>
+-    </recent_temporary>
+-  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task id="LOCAL-00001" summary="changes">
+@@ -141,63 +59,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1685378557177</updated>
+     </task>
+-    <task id="LOCAL-00003" summary="re-upload">
+-      <created>1685378781342</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685378781342</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="divided files to packages">
+-      <created>1685383208362</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685383208362</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="added RunServer and RunClient">
+-      <created>1685384889485</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685384889485</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="added host and guest classes">
+-      <created>1685385532114</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685385532114</updated>
+-    </task>
+-    <task id="LOCAL-00007" summary="added methods to GameLogic and created GameLogicTest">
+-      <created>1685470707195</created>
+-      <option name="number" value="00007" />
+-      <option name="presentableId" value="LOCAL-00007" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685470707195</updated>
+-    </task>
+-    <task id="LOCAL-00008" summary="added method distributeTiles to GameLogic and created PlayerStatus">
+-      <created>1685474036951</created>
+-      <option name="number" value="00008" />
+-      <option name="presentableId" value="LOCAL-00008" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685474036951</updated>
+-    </task>
+-    <task id="LOCAL-00009" summary="added method distributeTiles to GameLogic and created PlayerStatus">
+-      <created>1685474077618</created>
+-      <option name="number" value="00009" />
+-      <option name="presentableId" value="LOCAL-00009" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685474077619</updated>
+-    </task>
+-    <task id="LOCAL-00010" summary="updated files">
+-      <created>1685474098595</created>
+-      <option name="number" value="00010" />
+-      <option name="presentableId" value="LOCAL-00010" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1685474098595</updated>
+-    </task>
+-    <option name="localTasksCounter" value="11" />
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+@@ -206,12 +68,10 @@
+     </ignored-roots>
+     <MESSAGE value="changes" />
+     <MESSAGE value="re-upload" />
+-    <MESSAGE value="divided files to packages" />
+-    <MESSAGE value="added RunServer and RunClient" />
+-    <MESSAGE value="added host and guest classes" />
+-    <MESSAGE value="added methods to GameLogic and created GameLogicTest" />
+-    <MESSAGE value="added method distributeTiles to GameLogic and created PlayerStatus" />
+-    <MESSAGE value="updated files" />
+-    <option name="LAST_COMMIT_MESSAGE" value="updated files" />
++    <option name="LAST_COMMIT_MESSAGE" value="re-upload" />
++  </component>
++  <component name="XSLT-Support.FileAssociations.UIState">
++    <expand />
++    <select />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision cdac14866ba84dcc4d9c4007dc61c4fdde8fec5d)
++++ b/.idea/vcs.xml	(date 1685484491396)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
