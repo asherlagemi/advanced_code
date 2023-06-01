@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36655a73-77ff-4503-bc8c-09819e4bc37e" name="Changes" comment="Changes to structure and added classes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/MyGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/GuestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GuestModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/HostModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/HostModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/HostServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/HostServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/PlayerStatistics.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/RunClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/RunPlayerClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/RunSearchClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/RunSearchClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/SearchServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/SearchServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/GameLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/GameLogicTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685632684572</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Changes to structure and added classes">
+      <created>1685635121594</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1685635121594</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

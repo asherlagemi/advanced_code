@@ -28,6 +28,7 @@ public class GameLogic {
             else
                 score -= 5;     // penalty if took unfruitful risk
         }
+
         player.setScore(player.getScore() + score);
     }
 
