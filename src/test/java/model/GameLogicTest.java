@@ -3,6 +3,8 @@ package model;
 import game_element.Tile;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class GameLogicTest {
 
     @Test
@@ -26,7 +28,7 @@ class GameLogicTest {
 
     @Test
     void updateStatistic() {
-        PlayerStatistics p1 = new PlayerStatistics("Asher");
+        PlayerStatus p1 = new PlayerStatus("Asher");
         System.out.println(p1.getName());
         GameLogic.updateStatistic(p1,true,6); // should be 6+10=16
         System.out.printf("%d\t", p1.getScore());
@@ -60,7 +62,7 @@ class GameLogicTest {
     }
 
     public static void testStats(){
-        PlayerStatistics p1 = new PlayerStatistics("Asher");
+        PlayerStatus p1 = new PlayerStatus("Asher");
         System.out.println(p1.getName());
         GameLogic.updateStatistic(p1,true,6); // should be 6+10=16
         System.out.printf("%d\t", p1.getScore());

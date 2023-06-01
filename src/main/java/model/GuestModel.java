@@ -1,9 +1,6 @@
 package model;
 
-public class GuestModel extends Model {
+public class GuestModel extends GameModel {
 
-    public GuestModel(String propertiesFileName) {
-        super(propertiesFileName);
-    }
 
 }

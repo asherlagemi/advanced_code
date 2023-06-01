@@ -3,9 +3,13 @@ package model;
 import game_element.Tile;
 
 public class GameLogic {
-    private static final int handSize = 7;
+    private final int handSize;
 
-    public static Tile[] distributeTiles(Tile[] currHand) {
+    public GameLogic() {
+        handSize = 7;
+    }
+
+    public Tile[] distributeTiles(Tile[] currHand) {
         Tile[] newHand = new Tile[handSize];
         for (int i = 0; i < handSize; i++) {
             if (i < currHand.length)
@@ -17,7 +21,7 @@ public class GameLogic {
         return newHand;
     }
 
-    public static void updateStatistic(PlayerStatistics player, boolean riskFlag, int score) {
+    public void updateStatistic(Player player, boolean riskFlag, int score) {
         if (riskFlag) {
             if (score!=0)
                 score += 10;    // prize if took successful risk

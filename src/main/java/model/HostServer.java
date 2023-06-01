@@ -14,18 +14,15 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
 public class HostServer {
-    private MyServer s;
-
-
-    int port;
+    int admin_port;
     boolean stop;
     ClientHandler ch;
     int maxThreads;
     //ExecutorService executor;	//the thread pool
     ThreadPoolExecutor tp;
 
-    public HostServer(int port, ClientHandler ch, int maxThreads) {	//constructor
-        this.port = port;
+    public HostServer(int admin_port, ClientHandler ch, int maxThreads) {	//constructor
+        this.admin_port = admin_port;
         this.ch = ch;
         this.maxThreads = maxThreads;
         //executor = Executors.newFixedThreadPool(maxThreads);
@@ -40,7 +37,7 @@ public class HostServer {
 
     private void startServer() {	//general mechanism for creating a server
         try {
-            ServerSocket server = new ServerSocket(port);
+            ServerSocket server = new ServerSocket(admin_port);
             server.setSoTimeout(1000);	//waiting 1 second for client connection
             while(!stop) {
                 try {
