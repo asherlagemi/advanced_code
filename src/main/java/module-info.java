@@ -3,6 +3,6 @@ module com.example.advanced_code {
     requires javafx.fxml;
 
 
-    opens com.example.advanced_code to javafx.fxml;
-    exports com.example.advanced_code;
+    opens com.view.advanced_code to javafx.fxml;
+    exports com.view.advanced_code;
 }
