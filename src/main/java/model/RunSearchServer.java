@@ -20,7 +20,7 @@ public class RunSearchServer extends RunServer{
             PrintWriter outToServer = new PrintWriter(server.getOutputStream());
             Scanner in = new Scanner(server.getInputStream());
             String response = in.next();
-            outToServer.println(w);
+            outToServer.println(r);
             outToServer.flush();
             in.close();
             outToServer.close();

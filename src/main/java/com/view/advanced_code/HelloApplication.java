@@ -1,4 +1,4 @@
-package com.example.advanced_code;
+package com.view.advanced_code;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

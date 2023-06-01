@@ -1,4 +1,4 @@
-package com.example.advanced_code;
+package com.view.advanced_code;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
