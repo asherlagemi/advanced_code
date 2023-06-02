@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class RunSearchServer extends RunServer{
 
     public static void main(String[] args) {
+
         Random r = new Random();
         int port = 6000 + r.nextInt(1000);
         System.out.println("port: " + port);
