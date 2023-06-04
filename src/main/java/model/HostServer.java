@@ -39,9 +39,13 @@ public class HostServer {
         try {
             ServerSocket server = new ServerSocket(admin_port);
             server.setSoTimeout(1000);	//waiting 1 second for client connection
-            while(!stop) {
+            int numOfClients = 3;
+            Socket[] clients = new Socket[numOfClients];
+            int i=0;
+            boolean startGame = false;
+            while(!startGame) {
                 try {
-                    Socket client = server.accept();
+                    clients[i] = server.accept();
                     tp.execute(()->{
                         try {
                             Class<? extends ClientHandler> chClass = this.ch.getClass();
@@ -52,11 +56,16 @@ public class HostServer {
                         } catch (IOException e) {e.printStackTrace();}
                         catch (InvocationTargetException | InstantiationException | IllegalAccessException | NoSuchMethodException e) {throw new RuntimeException(e);}
                     });
-                    //ch.handleClient(client.getInputStream(), client.getOutputStream());
-                    //ch.close();
-                    //client.close();
+                    i++;
+                    if (i==3){  // or if received a startGame notification
+                        startGame = true;
+                        numOfClients = i;
+                    }
                 } catch(SocketTimeoutException ignored) {}
             }
+
+            // now handle the game
+
             server.close();
             tp.shutdown();
         }catch(IOException e) {e.printStackTrace();}
@@ -71,30 +80,10 @@ public class HostServer {
 
 
     public void run(String[] args) {
-        Random r=new Random();
-        int port=6000+r.nextInt(1000);
-        System.out.println("port: " + port);
-        MyServer s=new MyServer(port, new BookScrabbleHandler(),3);
-        s.start(); // runs in the background
-        try {
-            Socket server=new Socket("localhost", port);
-            PrintWriter outToServer=new PrintWriter(server.getOutputStream());
-            Scanner in=new Scanner(server.getInputStream());
-            String response=in.next();
-            outToServer.println(w);
-            outToServer.flush();
-            in.close();
-            outToServer.close();
-            server.close();
-        }catch(Exception e) {
-            System.out.println("error in checking dictionaryLegal in Board");
-        }finally{
-            s.close();
-        }
 
 
         System.out.println("SERVER SIDE");
-        MyServer server = new MyServer(8080, new RunServer.TestClientHandler(), 3);
+        HostServer server = new HostServer(8080, new RunServer.TestClientHandler(), 3);
         //MyServer server = new MyServer(8080, new HTTPClientHandler());
         server.start();
         System.out.println("server started");
